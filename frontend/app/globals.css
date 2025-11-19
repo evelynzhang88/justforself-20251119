@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground: 15 23 42;
+    --background: 255 255 255;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground: 248 250 252;
+      --background: 15 23 42;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(255 255 255);
+    color: rgb(15 23 42);
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: rgb(15 23 42);
+      color: rgb(248 250 252);
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar - 更简洁的设计 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(203 213 225);
+  border-radius: 9999px;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(51 65 85);
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(148 163 184);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(71 85 105);
+  }
+}
+
+/* 选择文本的颜色 */
+::selection {
+  background-color: rgb(226 232 240);
+  color: rgb(15 23 42);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background-color: rgb(51 65 85);
+    color: rgb(248 250 252);
+  }
+}
+
